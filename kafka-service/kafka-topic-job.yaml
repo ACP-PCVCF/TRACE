@@ -9,7 +9,7 @@ spec:
       restartPolicy: OnFailure
       containers:
         - name: kafka-topic-creator
-          image: bitnami/kafka:latest
+          image: bitnamilegacy/kafka:4.0.0-debian-12-r10
           command:
             - bash
             - -c

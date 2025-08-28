@@ -1,8 +1,16 @@
+global:
+  security:
+    allowInsecureImages: true
+
 kraft:
   enabled: true
 zookeeper:
   enabled: false
 
+image:
+  registry: docker.io
+  repository: bitnamilegacy/kafka
+  tag: "4.0.0-debian-12-r10"
 
 auth:
   enabled: false

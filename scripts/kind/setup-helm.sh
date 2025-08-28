@@ -25,13 +25,6 @@ else
   echo "Camunda Helm repo already added."
 fi
 
-if ! helm repo list | grep -q bitnami; then
-  echo "Adding Bitnami Helm repo..."
-  helm repo add bitnami https://charts.bitnami.com/bitnami
-else
-  echo "Bitnami Helm repo already added."
-fi
-
 echo "Updating Helm repos..."
 helm repo update
 
@@ -69,7 +62,8 @@ kubectl wait --for=condition=ready pod --all -n $NAMESPACE1 --timeout=600s || {
 echo "Installing Kafka..."
 if ! helm list -n $NAMESPACE1 | grep -q kafka; then
   echo "Installing Kafka in namespace $NAMESPACE1..."
-  helm install kafka bitnami/kafka \
+  echo "Using local Kafka chart (.tgz) with legacy images for brownout compatibility..."
+  helm install kafka ./kafka-service/kafka-32.3.10.tgz \
     --namespace $NAMESPACE1 \
     --create-namespace \
     -f kafka-service/kafka-values.yaml
@@ -91,7 +85,7 @@ kubectl wait --for=condition=complete job/create-kafka-topics -n $NAMESPACE1 --t
 }
 
 echo "Configuring Kafka broker message size limits..."
-kubectl run kafka-config-all --rm -it --restart=Never --image=bitnami/kafka --namespace=proving-system -- bash -c "for broker in 0 1 2; do kafka-configs.sh --bootstrap-server kafka.proving-system.svc.cluster.local:9092 --entity-type brokers --entity-name \$broker --alter --add-config message.max.bytes=52428800; done" || {
+kubectl run kafka-config-all --rm -it --restart=Never --image=bitnamilegacy/kafka:4.0.0-debian-12-r10 --namespace=proving-system -- bash -c "for broker in 0 1 2; do kafka-configs.sh --bootstrap-server kafka.proving-system.svc.cluster.local:9092 --entity-type brokers --entity-name \$broker --alter --add-config message.max.bytes=52428800; done" || {
   echo "Warning: Kafka configuration may have failed, continuing..."
 }
 
