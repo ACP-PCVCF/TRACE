@@ -12,6 +12,8 @@ Before starting the setup, ensure you have the following tools installed on your
 - **Helm** - Kubernetes package manager
 - **Git** - Version control system
 - **Bash shell** - For running setup scripts
+- **Camunda Modeler (Camunda 8)** - Desktop application to deploy BPMN/DMN models.
+  - Download: https://camunda.com/download/modeler/ or https://github.com/camunda/camunda-modeler/releases
 
 ## Initial System Setup
 
