@@ -67,6 +67,7 @@ Ensure you have the following tools installed:
 - Helm
 - Git
 - Bash shell
+- Camunda Modeler (Camunda 8)
 
 ### Quick Start
 
