@@ -104,7 +104,7 @@ For detailed setup instructions, see [Setup Documentation](docs/setup-instructio
 
 Or for a visual guide, please watch this short video covering the setup, deployment, and a brief demonstration. 
 
-[<img width="1800" height="1080" alt="preview" src="https://github.com/user-attachments/assets/c9033fc3-5451-42cf-8974-d154a8dd9feb" />](https://tubcloud.tu-berlin.de/apps/files/files/4447940179?dir=/&openfile=true)
+[<img width="1800" height="1080" alt="preview" src="https://github.com/user-attachments/assets/c9033fc3-5451-42cf-8974-d154a8dd9feb" />](https://tubcloud.tu-berlin.de/s/wiC2YrbHZxmZpYM)
 
 
 ## 📖 Documentation
