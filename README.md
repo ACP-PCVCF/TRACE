@@ -102,6 +102,11 @@ Ensure you have the following tools installed:
 
 For detailed setup instructions, see [Setup Documentation](docs/setup-instructions.md).
 
+Or for a visual guide, please watch this short video covering the setup, deployment, and a brief demonstration. 
+
+[<img width="1800" height="1080" alt="preview" src="https://github.com/user-attachments/assets/c9033fc3-5451-42cf-8974-d154a8dd9feb" />](https://tubcloud.tu-berlin.de/apps/files/files/4447940179?dir=/&openfile=true)
+
+
 ## 📖 Documentation
 
 - **[Setup Instructions](docs/setup-instructions.md)** - Complete system setup guide
